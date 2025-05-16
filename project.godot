@@ -12,5 +12,6 @@ config_version=5
 
 config/name="Tennis"
 config/tags=PackedStringArray("fabrica")
+run/main_scene="uid://ia6g8wttsq76"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
