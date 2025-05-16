@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ia6g8wttsq76"]
+[gd_scene load_steps=7 format=3 uid="uid://ia6g8wttsq76"]
 
 [ext_resource type="Script" uid="uid://esmphdxx87ex" path="res://script/ball.gd" id="1_v0l8b"]
 [ext_resource type="Texture2D" uid="uid://bekcdiia74n50" path="res://icon.svg" id="2_wp4xf"]
@@ -8,6 +8,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0l8b"]
 size = Vector2(20, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp4xf"]
+size = Vector2(1168, 162)
 
 [node name="Main" type="Node2D"]
 
@@ -34,3 +37,13 @@ offset_left = -10.0
 offset_top = -42.0
 offset_right = 10.0
 offset_bottom = 42.0
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(574, -78)
+shape = SubResource("RectangleShape2D_wp4xf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Wall"]
+position = Vector2(574, 722)
+shape = SubResource("RectangleShape2D_wp4xf")
