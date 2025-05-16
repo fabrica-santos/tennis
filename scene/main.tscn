@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ia6g8wttsq76"]
+[gd_scene load_steps=6 format=3 uid="uid://ia6g8wttsq76"]
 
 [ext_resource type="Script" uid="uid://esmphdxx87ex" path="res://script/ball.gd" id="1_v0l8b"]
 [ext_resource type="Texture2D" uid="uid://bekcdiia74n50" path="res://icon.svg" id="2_wp4xf"]
+[ext_resource type="Script" uid="uid://rct0qqhhase7" path="res://script/racket.gd" id="3_wp4xf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_brvut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0l8b"]
+size = Vector2(20, 84)
 
 [node name="Main" type="Node2D"]
 
@@ -17,3 +21,16 @@ texture = ExtResource("2_wp4xf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 shape = SubResource("CircleShape2D_brvut")
+
+[node name="Racket" type="CharacterBody2D" parent="."]
+position = Vector2(33, 335)
+script = ExtResource("3_wp4xf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Racket"]
+shape = SubResource("RectangleShape2D_v0l8b")
+
+[node name="ColorRect" type="ColorRect" parent="Racket"]
+offset_left = -10.0
+offset_top = -42.0
+offset_right = 10.0
+offset_bottom = 42.0
