@@ -4,6 +4,7 @@ var speed: float = 150
 var direction: Vector2 = Vector2.ZERO
 
 @onready var ball: CharacterBody2D = $"../Ball"
+@onready var racket_hit: AudioStreamPlayer2D = $RacketHit
 
 
 func _physics_process(delta: float) -> void:
@@ -11,3 +12,7 @@ func _physics_process(delta: float) -> void:
 	direction = direction.normalized()
 	velocity = direction * speed
 	move_and_slide()
+
+
+func _on_ball_collided() -> void:
+	racket_hit.play()
